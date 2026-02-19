@@ -171,6 +171,7 @@ if pages >= max_page:
 
 #Copying pages to clipboard
 elif mode == "2":
+    time.sleep(3)
     for item in page_list:
 
 # Windows clipboard
@@ -200,7 +201,7 @@ elif mode == "2":
 #Timer before next page
         print("Page " + str(item[0]+1) + " copied")
         print("\a", end="")
-        time.sleep(6)
+        time.sleep(3)
 
 # Windows clipboard
         if platform.system() == "Windows":
