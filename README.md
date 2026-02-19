@@ -10,3 +10,8 @@ Make sure when using the command that you do not leave any spaces or newlines be
 When running the script it'll create a new file called MineProc.txt with the converted text.
 If you choose option 2, the script will begin pasting each page into your clipboard waiting 3 seconds before pasting the next page (signified by a terminal beep)
 This is helpfull for pasting each page into the book without having to tab out of your game.
+
+# Compatability
+The script should work on Windows, Mac, and Linux. 
+Linux users will have to have the wayland clipboard installed.
+Only a Linux .image executable has been provided.
