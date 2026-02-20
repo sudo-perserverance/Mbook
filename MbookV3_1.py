@@ -42,45 +42,44 @@ page_data = ""
 page_list = []
 
 #Setting how many pixels each letter uses up
-alphabet = [
-    [" ", 4],
-    ["!", 2],
-    ['"', 4],
-    ["'", 2],
-    ["(", 4],
-    [")", 4],
-    ["*", 4],
-    [",", 2],
-    [".", 2],
-    [":", 2],
-    [";", 2],
-    ["<", 5],
-    [">", 5],
-    ["@", 7],
-    ["I", 4],
-    ["[", 4],
-    ["]", 4],
-    ["`", 3],
-    ["f", 5],
-    ["i", 2],
-    ["k", 5],
-    ["l", 3],
-    ["t", 4],
-    ["{", 4],
-    ["}", 4],
-    ["|", 2],
-    ["~", 7],
-]
+alphabet = {
+    " ": 4,
+    "!": 2,
+    '"': 4,
+    "'": 2,
+    "(": 4,
+    ")": 4,
+    "*": 4,
+    ",": 2,
+    ".": 2,
+    ":": 2,
+    ";": 2,
+    "<": 5,
+    ">": 5,
+    "@": 7,
+    "I": 4,
+    "[": 4,
+    "]": 4,
+    "`": 3,
+    "f": 5,
+    "i": 2,
+    "k": 5,
+    "l": 3,
+    "t": 4,
+    "{": 4,
+    "}": 4,
+    "|": 2,
+    "~": 7,
+}
+
 
 #Main loop to index each character
 for item in raw_data:
     iteration += 1
 
 #Determining the dots of the current character in the array
-    if any(item in row for row in alphabet):
-        for index in alphabet:
-            if index[0] == item:
-                item_dots = index[1]
+    if not (alphabet.get(item) is None):
+        item_dots = alphabet.get(item)
     else:
         item_dots = 6
 
@@ -157,6 +156,7 @@ raw.close()
 processed.close()
 
 print("\a", end="")
+print("Script has completed. Please check MineProc.txt")
 
 if pages >= max_page:
     print("TEXT EXCEEDS MINECRAFT PAGE LIMIT, PLEASE EITHER SHORTEN THE TEXT OR TRY SOMETHING ELSE")
